@@ -1,0 +1,42 @@
+The core code to send to the collar is based on 
+https://github.com/smouldery/shock-collar-control/blob/master/Arduino%20Modules/transmitter_vars.ino
+
+The protocol is defined at https://github.com/smouldery/shock-collar-control/wiki/protocol
+
+I've taken this and just kludged it, and then put an ESP8266 web interface
+in front.
+
+The data message sent is
+
+1 + channelnorm + modenorm + key + power + moderev + channelrev + 00
+
+                 norm  rev
+   Channel 1     111   000
+   Channel 2     000   111
+
+   Light        1000  1110
+   Beep         0100  1101
+   Shock        0001  0111
+   Vibrate      0010  1011
+
+rev is basically reverse the string then flip 0/1; so 1000 becomes 0001
+becomes 1110.  It's quicker just to hard-code the two values.
+
+Key is a 17 bit value
+
+Power is an 7 bit value
+
+The signal is a start bit then the signal then a delay
+
+Timing in microseconds seems to vary between difference implmentations and the
+protocol doc.  I kinda wonder if "1" and "0" should be 1000uS in duration!
+
+  The start bit is  HI(1500), LO(741)
+
+  To send a 1: HI(741), LO(247)
+  To send a 0: HI(247), LO(741)
+
+There's a 4500 uS delay between sending messages. Or is that 10560uS ?
+
+Messages should be sent to the collar every 2 minutes to ensure it
+doesn't go to sleep

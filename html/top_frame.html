@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="bottom">
+</head>
+
+<body>
+<center>
+  <form name=time action=send/ method=post enctype="multipart/form-data">
+    Vibrate strength: <input name="v_str" size=3 type="number" min="0" max="100" value=100>
+    Vibrate duration: <input name="v_dur" size=3 type="number" min="0" max="30" value=1>
+    <input type=submit name=vibrate value=Vibrate>
+<p>
+    Shock strength: <input name="s_str" size=3 type="number" min="0" max="100" value=1>
+    Shock duration: <input name="s_dur" size=3 type="number" min="0" max="30" value=1>
+    <input type=submit name=shock value=Shock>
+<p>
+    Beep duration: <input name="b_dur" size=3 type="number" min="0" max="30" value=1>
+    <input type=submit name=beep value=Beep>
+<p>
+</form>
+</center>
+<hr>
+<center>
+<a href="change_ap.html">Change WiFi or collar details</a>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+--
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<a href="change_auth.html">Change authentication details</a>
+</center>
+</body>
+</html>
