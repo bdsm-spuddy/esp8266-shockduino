@@ -9,7 +9,7 @@ in front.
 
 The NOTES file explains how the data needs to be sent.
 
-~~~~
+---
 
 A common form of [shock collar](https://www.amazon.com/gp/product/B00W6ZHZMI))
 is controlled via a 433Mhz signal.  Some clever people reverse engineered
