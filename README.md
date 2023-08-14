@@ -3,6 +3,7 @@
 ESP8266 to provide a webserver to control a shock collar
 
 The core code to send to the collar is based on 
+    https://github.com/smouldery/shock-collar-control/blob/master/Arduino%20Modules/transmitter_vars.ino
 
 I've taken this and just kludged it, and then put an ESP8266 web interface
 in front.
@@ -11,7 +12,7 @@ The NOTES file explains how the data needs to be sent.
 
 ---
 
-A common form of [shock collar](https://www.amazon.com/gp/product/B00W6ZHZMI))
+A common form of [shock collar](https://www.amazon.com/gp/product/B00W6ZHZMI)
 is controlled via a 433Mhz signal.  Some clever people reverse engineered
 the transmission protocol and wrote code to let an [Arduino send these
 messages](https://github.com/smouldery/shock-collar-control/blob/master/Arduino%20Modules/transmitter_vars.ino), using a [433Mhz transmitter](https://www.amazon.com/gp/product/B01DKC2EY4).
